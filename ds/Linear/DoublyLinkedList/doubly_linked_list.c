@@ -38,10 +38,10 @@ void dll_insert_beginning(dll_list_t *list, int data) {
     dll_node_t *n = (dll_node_t*)malloc(sizeof(dll_node_t));
     n->data = data;
     n->prev = NULL;
-    
+
     n->next = list->head;
     list->head = n;
-    
+
     if (n->next != NULL) {
         n->next->prev = n;
     } else {
@@ -53,10 +53,10 @@ void dll_insert_end(dll_list_t *list, int data) {
     dll_node_t *n = (dll_node_t*)malloc(sizeof(dll_node_t));
     n->data = data;
     n->next = NULL;
-    
+
     n->prev = list->tail;
     list->tail = n;
-    
+
     if (n->prev != NULL) {
         n->prev->next = n;
     } else {
@@ -72,7 +72,7 @@ void dll_insert_after(dll_list_t *list, dll_node_t *node, int data) {
         n->data = data;
         n->prev = node;
         n->next = node->next;
-        
+
         node->next->prev = n;
         node->next = n;
     }
@@ -86,7 +86,7 @@ void dll_insert_before(dll_list_t *list, dll_node_t *node, int data) {
         n->data = data;
         n->next = node;
         n->prev = node->prev;
-        
+
         node->prev->next = n;
         node->prev = n;
     }
@@ -98,7 +98,7 @@ void dll_remove_node(dll_list_t *list, dll_node_t *node) {
     } else {
         list->head = node->next;
     }
-    
+
     if (node->next != NULL) {
         node->next->prev = node->prev;
     } else {
@@ -113,5 +113,3 @@ void dll_remove_front(dll_list_t *list) {
 void dll_remove_back(dll_list_t *list) {
     dll_remove_node(list, list->tail);
 }
-
-
