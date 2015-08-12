@@ -1,11 +1,3 @@
-//
-//  doubly_linked_list.c
-//  ds
-//
-//  Created by Pawel Krawiec on 11/08/2015.
-//  Copyright (c) 2015 rentalcars. All rights reserved.
-//
-
 #include "doubly_linked_list.h"
 #include <stdio.h>
 #include <stdlib.h>
