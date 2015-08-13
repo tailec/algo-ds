@@ -96,6 +96,7 @@ void dll_remove_node(dll_list_t *list, dll_node_t *node) {
     } else {
         list->tail = node->prev;
     }
+    free(node);
 }
 
 void dll_remove_front(dll_list_t *list) {
